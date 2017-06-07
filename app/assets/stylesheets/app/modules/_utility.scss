@@ -1,0 +1,7 @@
+// Import if google fonts URL is defined
+@if variable-exists(font-url--roboto){
+  @import url($font-url--roboto);
+}
+@if variable-exists(font-url--lato) {
+  @import url($font-url--lato);
+}
