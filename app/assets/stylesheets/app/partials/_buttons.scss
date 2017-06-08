@@ -1,0 +1,22 @@
+.btn {
+  display: inline-block;
+  border: 1px solid transparent;
+  font-family: $font-family--lato;
+  border-radius: 5px;
+  cursor: pointer;
+  &:focus { outline: none; }
+  &__normal {
+    padding: 10px 15px;
+  }
+  &__large {
+    padding: 10px 25px;
+  }
+  &--green {
+    background-color: $green-flat;
+    color: $white;
+    transition: all 0.3s ease-in;
+    &:hover {
+      background-color: rgb(89, 243, 154);
+    }
+  }
+}

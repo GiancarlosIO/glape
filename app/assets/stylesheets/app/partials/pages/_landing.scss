@@ -1,0 +1,23 @@
+.landing {
+  &__intro {
+    font-family: $font-family--open;
+    > h2 {
+      font-size: 35px;
+      font-weight: 300;
+      margin-bottom: 8px;
+    }
+    > p {
+      font-size: 16px;
+      font-weight: 400;
+      text-shadow: 3px 3px 3px rgba($black, 0.8);
+      @for $i from 1 through 3 {
+        &:nth-of-type(#{$i}) {
+          animation-delay: #{$i * 0.8}s;
+        }
+      }
+    }
+    > .btn {
+      animation-delay: 3.2s;
+    }
+  }
+}
