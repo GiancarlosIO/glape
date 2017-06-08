@@ -1,5 +1,12 @@
 .landing {
-  &__intro {
+  &__section {
+    width: 100%;
+    padding: 30px;
+    font-family: $font-family--open;
+    background-color: $white;
+    box-sizing: border-box;
+  }
+  &__overlay {
     font-family: $font-family--open;
     > h2 {
       font-size: 35px;
@@ -38,6 +45,67 @@
       color: $blue-flat;
       background-color: $white;
       transform: scale(1.1)
+    }
+  }
+  // intro section
+  &__intro {
+    min-height: 250px;
+    flex-flow: column;
+    > h3 {
+      color: $title;
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+    > p {
+      color: $text;
+      font-size: 14px;
+      display: block;
+      width: 700px;
+    }
+  }
+  // features section
+  &__features {
+    flex-flow: row;
+    justify-content: space-around;
+    align-items: center;
+    height: 370px;
+    .feature {
+      position: relative;
+      text-align: center;
+      width: 330px;
+      height: 220px;
+      background-color: $bg-grey;
+      padding: 20px;
+      border-radius: 5px;
+      box-sizing: border-box;
+      &__icon {
+        position: absolute;
+        top: -25px;
+        left: 130px;
+        width: 65px;
+        height: 65px;
+        border-radius: 50px;
+        background-color: $white;
+        box-shadow: 0 0 0 5px $bg-grey;
+        font-size: 35px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      &__content {
+        > h4 {
+          font-family: $font-family--lato;
+          font-size: 24px;
+          color: $title;
+          margin-bottom: 10px;
+        }
+        > p {
+          color: rgba($text, 0.8);
+          font-family: $font-family--open;
+          font-size: 14px;
+          line-height: 24px;
+        }
+      }
     }
   }
 }
