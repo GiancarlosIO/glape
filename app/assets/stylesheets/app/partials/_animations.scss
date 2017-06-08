@@ -1,0 +1,63 @@
+.bg {
+  &-animation {
+    animation-name: bgAnimation;
+    animation-duration: 3.2s;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+  }
+}
+
+@keyframes bgAnimation {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}
+
+.toTop {
+  opacity: 0;
+  transform: translateY(30px);
+  animation-name: noTranslateY;
+  animation-duration: 0.6s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+}
+.toBottom {
+  opacity: 0;
+  transform: translateY(-30px);
+  animation-name: noTranslateY;
+  animation-duration: 0.6s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+}
+.toRight {
+  opacity: 0;
+  transform: translateX(100px);
+  animation-name: noTranslateX;
+  animation-duration: 0.8s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+}
+.toLeft {
+  opacity: 0;
+  transform: translateX(-40px);
+  animation-name: noTranslateX;
+  animation-duration: 0.8s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes noTranslateY {
+  to {
+    opacity: 1;
+    transform: translateY(0px)
+  }
+}
+@keyframes noTranslateX {
+  to {
+    opacity: 1;
+    transform: translateY(0px)
+  }
+}
