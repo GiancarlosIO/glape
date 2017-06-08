@@ -57,3 +57,12 @@
   // align
   &-center { text-align: center; }
 }
+
+// flex
+.flex {
+  display: flex;
+  &-absCenter {
+    justify-content: center;
+    align-items: center;
+  }
+}
