@@ -176,4 +176,106 @@
       width: 100%;
     }
   }
+  // team section
+  &__team {
+    &__title {
+      > h5 {
+        color: rgba($text, 0.7);
+        font-size: 13px;
+        font-weight: bold;
+      }
+      > h3 {
+        color: $title;
+        font-family: $font-family--lato;
+        font-size: 32px;
+        font-weight: 300;
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+      > p {
+        font-family: $font-family--open;
+        margin-top: 0;
+        font-size: 16px;
+        font-weight: 300;
+        color: $text;
+        line-height: 30px;
+      }
+    }
+    &__container {
+      display: flex;
+      flex-flow: wrap;
+      justify-content: space-around;
+      align-items: center;
+      margin-top: 30px;
+      .member {
+        position: relative;
+        border-radius: 3px;
+        border: 1px solid rgba($black, 0.4);
+        padding: 10px;
+        width: 200px;
+        min-height: 310px;
+        margin: 0 20px;
+        min-width: 200px;
+        margin-bottom: 20px;
+        &:hover {
+          .member__info {
+            opacity: 1;
+            z-index: 3;
+          }
+        }
+        &__img {
+          text-align: center;
+          width: 100%;
+          height: 200px;
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+        &__content {
+          margin-top: 10px;
+          text-align: center;
+          padding: 10px;
+          background-color: $bg-grey;
+          > h4 {
+            font-weight: 300;
+            font-size: 16px;
+            color: rgba($text, 0.6);
+            > span {
+              color: $red-flat;
+              font-size: 13px;
+            }
+          }
+        }
+        &__info {
+          position: absolute;
+          z-index: -1;
+          opacity: 0;
+          top: 0;
+          left: 0;
+          bottom: 0;
+          right: 0;
+          background-color: rgba($black, 0.3);
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+          font-size: 24px;
+          color: $black;
+          transition: all 0.3s ease-in-out;
+          > a {
+            display: block;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            color: $black;
+            justify-content: center;
+            align-items: center;
+            background-color: $white;
+            border-radius: 50%;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+  }
 }
