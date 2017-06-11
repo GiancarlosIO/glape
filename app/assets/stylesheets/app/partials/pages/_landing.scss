@@ -52,6 +52,7 @@
   &__intro {
     min-height: 250px;
     flex-flow: column;
+    padding-top: 0;
     > h3 {
       color: $title;
       font-size: 24px;
