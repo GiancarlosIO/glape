@@ -52,6 +52,7 @@
   &__intro {
     min-height: 250px;
     flex-flow: column;
+    padding-top: 0;
     > h3 {
       color: $title;
       font-size: 24px;
@@ -178,6 +179,7 @@
   }
   // team section
   &__team {
+    padding-bottom: 40px;
     &__title {
       > h5 {
         color: rgba($text, 0.7);
@@ -210,7 +212,7 @@
       .member {
         position: relative;
         border-radius: 3px;
-        border: 1px solid rgba($black, 0.4);
+        border: 1px solid rgba($black, 0.15);
         padding: 10px;
         width: 200px;
         min-height: 310px;
@@ -277,5 +279,80 @@
         }
       }
     }
+  }
+  &__contact {
+    background-color: $bg-grey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    min-height: 300px;
+    padding-bottom: 40px;
+    > h2 {
+      margin-top: 30px;
+      font-family: $font-family--lato;
+      font-size: 45px;
+      text-align: center;
+      font-weight: 300;
+      color: $red-flat;
+    }
+    > .form {
+      width: 650px;
+      padding: 10px;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+      align-items: flex-start;
+      .form__col-5 {
+        width: 50%;
+        display: flex;
+        flex-flow: column;
+        align-items: stretch;
+        box-sizing: border-box;
+        > .field {
+          padding: 10px;
+          min-height: 50px;
+          font-family: $font-family--open;
+          > label, > input, > textarea {
+            width: 100%;
+            box-sizing: border-box;
+          }
+          > label {
+            font-size: 13px;
+            font-weight: bold;
+            color: $text;
+            display: block;
+            width: 100%;
+            margin-bottom: 8px;
+          }
+          > textarea {
+            padding: 5px;
+            height: 110px;
+            border: 1px solid rgba(0,0,0,0.2);
+            resize: none;
+            border-radius: 4px;
+            transition: all 0.3s ease-in-out;
+            &:focus {
+              outline: none;
+              border: 1px solid $blue-flat;
+            }
+          }
+          > input {
+            border-radius: 4px;
+            padding: 6px 15px;
+            border: 1px solid rgba(0,0,0,0.2);
+            transition: all 0.3s ease-in-out;
+            &:focus {
+              border: 1px solid $blue-flat;
+              outline: none;
+            }
+          }
+        }
+      }
+    }
+  }
+  &__footer {
+    height: 80px;
+    padding: 20px 0;
   }
 }

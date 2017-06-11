@@ -9,7 +9,7 @@
     = javascript_pack_tag 'app'
   %body
     %header.header
-      .header__logo
+      .header__logo.cursor-pointer#headerLogo
         %h2
           Glape
       %nav.menu
@@ -24,3 +24,16 @@
             %a{href: '#'}
               Registro
     = yield
+    %footer.landing__footer.bg-black
+      .flex.flex-absCenter
+        .social-icon
+          %i.fa.fa-facebook
+        .social-icon
+          %i.fa.fa-twitter
+        .social-icon
+          %i.fa.fa-instagram
+        .social-icon
+          %i.fa.fa-linkedin
+      %h3.text-center.text-white.text-mogra.margin-none
+        Glape
+
