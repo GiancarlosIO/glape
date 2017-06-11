@@ -1,0 +1,40 @@
+.btn {
+  display: inline-block;
+  border: 1px solid transparent;
+  font-family: $font-family--lato;
+  border-radius: 5px;
+  cursor: pointer;
+  &:focus { outline: none; }
+  &__normal {
+    padding: 10px 15px;
+  }
+  &__large {
+    padding: 10px 25px;
+  }
+  &--green {
+    background-color: $green-flat;
+    color: $white;
+    transition: all 0.3s ease-in;
+    &:hover {
+      background-color: rgb(89, 243, 154);
+    }
+  }
+  &--blue {
+    background-color: $blue-flat;
+    color: $white;
+    transition: all 0.3s ease-in;
+    &:hover {
+      background-color: rgba($blue-flat, 0.8);
+    }
+    &--inverted {
+      background-color: $white;
+      border: 1px solid $blue-flat;
+      color: $blue-flat;
+      transition: all 0.2s ease-in-out;
+      border-radius: 3px;
+      &:hover {
+        box-shadow: 0px 6px 3px rgba(0, 0, 0, 0.3);
+      }
+    }
+  }
+}

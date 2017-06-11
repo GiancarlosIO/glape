@@ -1,0 +1,281 @@
+.landing {
+  &__section {
+    width: 100%;
+    padding: 30px;
+    padding-bottom: 0;
+    font-family: $font-family--open;
+    background-color: $white;
+    box-sizing: border-box;
+  }
+  &__overlay {
+    font-family: $font-family--open;
+    > h2 {
+      font-size: 35px;
+      font-weight: 300;
+      margin-bottom: 8px;
+    }
+    > p {
+      font-size: 16px;
+      font-weight: 400;
+      text-shadow: 3px 3px 3px rgba($black, 0.8);
+      @for $i from 1 through 3 {
+        &:nth-of-type(#{$i}) {
+          animation-delay: #{$i * 0.8}s;
+        }
+      }
+    }
+    > .btn {
+      animation-delay: 3.2s;
+    }
+  }
+  &__arrow {
+    cursor: pointer;
+    position: absolute;
+    bottom: 0;
+    z-index: 3;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgba($black, 0.3);
+    color: $white;
+    font-size: 35px;
+    margin-bottom: 10px;
+    animation-delay: 4s;
+    transition: all 0.3s ease-in-out;
+    &:hover {
+      color: $blue-flat;
+      background-color: $white;
+      transform: scale(1.1)
+    }
+  }
+  // intro section
+  &__intro {
+    min-height: 250px;
+    flex-flow: column;
+    > h3 {
+      color: $title;
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+    > p {
+      color: $text;
+      font-size: 14px;
+      display: block;
+      width: 700px;
+    }
+  }
+  // features section
+  &__features {
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 0;
+    min-height: 320px;
+    .feature {
+      position: relative;
+      text-align: center;
+      width: 330px;
+      min-width: 320px;
+      height: 220px;
+      min-height: 220px;
+      background-color: $bg-grey;
+      padding: 20px;
+      border-radius: 5px;
+      box-sizing: border-box;
+      &__icon {
+        position: absolute;
+        top: -25px;
+        left: 130px;
+        width: 65px;
+        height: 65px;
+        border-radius: 50px;
+        background-color: $white;
+        box-shadow: 0 0 0 5px $bg-grey;
+        font-size: 35px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      &__content {
+        > h4 {
+          font-family: $font-family--lato;
+          font-size: 24px;
+          color: $title;
+          margin-bottom: 10px;
+        }
+        > p {
+          color: rgba($text, 0.8);
+          font-family: $font-family--open;
+          font-size: 14px;
+          line-height: 24px;
+        }
+      }
+    }
+  }
+  // steps section
+  &__steps {
+    padding-right: 50px;
+    padding-left: 50px;
+    padding-bottom: 50px;
+    height: auto;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    &__title {
+      width: 100%;
+      margin-bottom: 30px;
+      > h4 {
+        color: $title;
+        font-family: $font-family--lato;
+        font-size: 32px;
+        font-weight: 300;
+        margin-bottom: 10px;
+      }
+      > p {
+        color: rgba($text, 0.8);
+        font-size: 16px;
+        line-height: 24px;
+      }
+    }
+    &__bg {
+      width: 50%;
+      min-width: 550px;
+      height: 530px;
+      overflow: hidden;
+      > img {
+        width: 800px;
+        height: 100%;
+        min-width: 100%;
+        min-height: 100%;
+      }
+    }
+    &__info {
+      box-sizing: border-box;
+      width: 50%;
+      min-width: 550px;
+      padding-left: 40px;
+      .step {
+        margin-bottom: 30px;
+        &__title {
+          font-size: 18px;
+          color: $blue-flat;
+          font-family: $font-family--lato;
+          margin-bottom: 25px;
+          i { margin-right: 30px; }
+        }
+        &__content {
+          font-size: 14px;
+          color: rgba($text, 0.8);
+          font-family: $font-family--open ;
+          line-height: 24px;
+        }
+        &:last-child { margin-bottom: 0; }
+      }
+    }
+    &__actions {
+      width: 100%;
+    }
+  }
+  // team section
+  &__team {
+    &__title {
+      > h5 {
+        color: rgba($text, 0.7);
+        font-size: 13px;
+        font-weight: bold;
+      }
+      > h3 {
+        color: $title;
+        font-family: $font-family--lato;
+        font-size: 32px;
+        font-weight: 300;
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+      > p {
+        font-family: $font-family--open;
+        margin-top: 0;
+        font-size: 16px;
+        font-weight: 300;
+        color: $text;
+        line-height: 30px;
+      }
+    }
+    &__container {
+      display: flex;
+      flex-flow: wrap;
+      justify-content: space-around;
+      align-items: center;
+      margin-top: 30px;
+      .member {
+        position: relative;
+        border-radius: 3px;
+        border: 1px solid rgba($black, 0.4);
+        padding: 10px;
+        width: 200px;
+        min-height: 310px;
+        margin: 0 20px;
+        min-width: 200px;
+        margin-bottom: 20px;
+        &:hover {
+          .member__info {
+            opacity: 1;
+            z-index: 3;
+          }
+        }
+        &__img {
+          text-align: center;
+          width: 100%;
+          height: 200px;
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+        &__content {
+          margin-top: 10px;
+          text-align: center;
+          padding: 10px;
+          background-color: $bg-grey;
+          > h4 {
+            font-weight: 300;
+            font-size: 16px;
+            color: rgba($text, 0.6);
+            > span {
+              color: $red-flat;
+              font-size: 13px;
+            }
+          }
+        }
+        &__info {
+          position: absolute;
+          z-index: -1;
+          opacity: 0;
+          top: 0;
+          left: 0;
+          bottom: 0;
+          right: 0;
+          background-color: rgba($black, 0.3);
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+          font-size: 24px;
+          color: $black;
+          transition: all 0.3s ease-in-out;
+          > a {
+            display: block;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            color: $black;
+            justify-content: center;
+            align-items: center;
+            background-color: $white;
+            border-radius: 50%;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+  }
+}

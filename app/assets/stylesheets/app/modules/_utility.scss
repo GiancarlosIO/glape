@@ -5,3 +5,9 @@
 @if variable-exists(font-url--lato) {
   @import url($font-url--lato);
 }
+@if variable-exists(font-url--open) {
+  @import url($font-url--open);
+}
+@if variable-exists(font-url--mogra) {
+  @import url($font-url--mogra);
+}

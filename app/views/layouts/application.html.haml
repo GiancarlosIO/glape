@@ -1,0 +1,26 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title Glape
+    = csrf_meta_tags
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    = javascript_pack_tag 'app'
+  %body
+    %header.header
+      .header__logo
+        %h2
+          Glape
+      %nav.menu
+        %ul
+          %li.menu__link
+            %a{href: '#'}
+              Proyectos
+          %li.menu__link
+            %a{href: '#'}
+              Ingresar
+          %li.menu__link
+            %a{href: '#'}
+              Registro
+    = yield
