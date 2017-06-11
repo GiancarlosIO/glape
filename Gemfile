@@ -6,7 +6,6 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.0'
 # Use pg as the database for Active Record
@@ -22,6 +21,9 @@ gem 'uglifier', '>= 1.3.0'
 
 gem 'haml-rails'
 gem 'font-awesome-rails';
+
+# webpack
+gem 'webpacker', '~> 2.0'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
