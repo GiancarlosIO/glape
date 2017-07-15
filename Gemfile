@@ -28,6 +28,9 @@ gem 'devise'
 # cancancan for role configuration
 gem 'cancancan', '~> 2.0'
 
+# faker for fake data
+gem 'faker'
+
 # webpack
 gem 'webpacker', '~> 2.0'
 
