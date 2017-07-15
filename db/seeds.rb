@@ -40,3 +40,8 @@ leaders = [
 leaders.each { |user| User.create(email: user[:email], name: Faker::Name.first_name, last_name: Faker::Name.last_name, password: '123123123', user_type: leader) }
 
 Company.all.each { |company| company.projects.create(title: Faker::Lorem.sentence, body: Faker::Lorem.paragraphs.join(' '))}
+
+devs = User.joins(:user_type).where('user_types.code = ?', 'dev')
+[0,1,2].each { |n| Participation.create(project: Project.first, user: devs[n])}
+[3,4,5,6].each { |n| Participation.create(project: Project.second, user: devs[n])}
+[7,8,9].each { |n| Participation.create(project: Project.third, user: devs[n])}
