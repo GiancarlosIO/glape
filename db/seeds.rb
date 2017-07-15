@@ -28,3 +28,13 @@ devs = [
 ]
 
 devs.each { |user| User.create(email: user[:email], name: user[:name], last_name: user[:last_name], password: '123123123', user_type: dev) }
+
+leader = UserType.find_by_code('leader')
+
+leaders = [
+  {email: 'leader1@fis.edu.pe', name: Faker::Name.first_name, last_name: Faker::Name.last_name},
+  {email: 'leader2@fis.edu.pe', name: Faker::Name.first_name, last_name: Faker::Name.last_name},
+  {email: 'leader3@fis.edu.pe', name: Faker::Name.first_name, last_name: Faker::Name.last_name},
+]
+
+leaders.each { |user| User.create(email: user[:email], name: user[:name], last_name: user[:last_name], password: '123123123', user_type: leader) }
