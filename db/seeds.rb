@@ -15,26 +15,28 @@ Company.create(user: User.find_by_email('colegio@goreica.org'), name: 'Colegio d
 dev = UserType.find_by_code('dev')
 
 devs = [
-  {email: 'dev1@fis.edu.pe', name: Faker::Name.first_name, last_name: Faker::Name.last_name},
-  {email: 'dev2@fis.edu.pe', name: Faker::Name.first_name, last_name: Faker::Name.last_name},
-  {email: 'dev3@fis.edu.pe', name: Faker::Name.first_name, last_name: Faker::Name.last_name},
-  {email: 'dev4@fis.edu.pe', name: Faker::Name.first_name, last_name: Faker::Name.last_name},
-  {email: 'dev5@fis.edu.pe', name: Faker::Name.first_name, last_name: Faker::Name.last_name},
-  {email: 'dev6@fis.edu.pe', name: Faker::Name.first_name, last_name: Faker::Name.last_name},
-  {email: 'dev7@fis.edu.pe', name: Faker::Name.first_name, last_name: Faker::Name.last_name},
-  {email: 'dev8@fis.edu.pe', name: Faker::Name.first_name, last_name: Faker::Name.last_name},
-  {email: 'dev9@fis.edu.pe', name: Faker::Name.first_name, last_name: Faker::Name.last_name},
-  {email: 'dev10@fis.edu.pe', name: Faker::Name.first_name, last_name: Faker::Name.last_name}
+  {email: 'dev1@fis.edu.pe'},
+  {email: 'dev2@fis.edu.pe'},
+  {email: 'dev3@fis.edu.pe'},
+  {email: 'dev4@fis.edu.pe'},
+  {email: 'dev5@fis.edu.pe'},
+  {email: 'dev6@fis.edu.pe'},
+  {email: 'dev7@fis.edu.pe'},
+  {email: 'dev8@fis.edu.pe'},
+  {email: 'dev9@fis.edu.pe'},
+  {email: 'dev10@fis.edu.pe'}
 ]
 
-devs.each { |user| User.create(email: user[:email], name: user[:name], last_name: user[:last_name], password: '123123123', user_type: dev) }
+devs.each { |user| User.create(email: user[:email], name: Faker::Name.first_name, last_name: Faker::Name.last_name, password: '123123123', user_type: dev) }
 
 leader = UserType.find_by_code('leader')
 
 leaders = [
-  {email: 'leader1@fis.edu.pe', name: Faker::Name.first_name, last_name: Faker::Name.last_name},
-  {email: 'leader2@fis.edu.pe', name: Faker::Name.first_name, last_name: Faker::Name.last_name},
-  {email: 'leader3@fis.edu.pe', name: Faker::Name.first_name, last_name: Faker::Name.last_name},
+  {email: 'leader1@fis.edu.pe'},
+  {email: 'leader2@fis.edu.pe'},
+  {email: 'leader3@fis.edu.pe'},
 ]
 
-leaders.each { |user| User.create(email: user[:email], name: user[:name], last_name: user[:last_name], password: '123123123', user_type: leader) }
+leaders.each { |user| User.create(email: user[:email], name: Faker::Name.first_name, last_name: Faker::Name.last_name, password: '123123123', user_type: leader) }
+
+Company.all.each { |company| company.projects.create(title: Faker::Lorem.sentence, body: Faker::Lorem.paragraphs.join(' '))}
