@@ -17,12 +17,14 @@
           %li.menu__link
             %a{href: '#'}
               Proyectos
-          %li.menu__link
-            %a{href: '#'}
-              Ingresar
-          %li.menu__link
-            %a{href: '#'}
-              Registro
+          - unless user_signed_in?
+            %li.menu__link
+              = link_to('Iniciar sesión', new_user_session_path)
+            %li.menu__link
+              = link_to('Registro', new_user_registration_path)
+          - if user_signed_in?
+            %li.menu__link
+              = link_to('Cerrar sesión', destroy_user_session_path, method: :delete)
     = yield
     %footer.landing__footer.bg-black
       .flex.flex-absCenter
@@ -36,4 +38,3 @@
           %i.fa.fa-linkedin
       %h3.text-center.text-white.text-mogra.margin-none
         Glape
-
