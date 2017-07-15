@@ -1,7 +1,47 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+Participation.delete_all; Project.delete_all; Company.delete_all; User.delete_all; UserType.delete_all
+
+UserType.create(name: 'Institución', code: 'company')
+UserType.create(name: 'Especialista', code: 'leader')
+UserType.create(name: 'Developer', code: 'dev')
+
+u = User.create(email: 'demuna@goreica.org', password: '123123123', user_type: UserType.find_by_code('company'))
+puts u.errors.messages
+Company.create(user: User.find_by_email('demuna@goreica.org'), name: 'Demuna de Ica')
+User.create(email: 'hospital@goreica.org', password: '123123123', user_type: UserType.find_by_code('company'))
+Company.create(user: User.find_by_email('hospital@goreica.org'), name: 'Hospital de Ica')
+User.create(email: 'colegio@goreica.org', password: '123123123', user_type: UserType.find_by_code('company'))
+Company.create(user: User.find_by_email('colegio@goreica.org'), name: 'Colegio de Ica')
+
+dev = UserType.find_by_code('dev')
+
+devs = [
+  {email: 'dev1@fis.edu.pe'},
+  {email: 'dev2@fis.edu.pe'},
+  {email: 'dev3@fis.edu.pe'},
+  {email: 'dev4@fis.edu.pe'},
+  {email: 'dev5@fis.edu.pe'},
+  {email: 'dev6@fis.edu.pe'},
+  {email: 'dev7@fis.edu.pe'},
+  {email: 'dev8@fis.edu.pe'},
+  {email: 'dev9@fis.edu.pe'},
+  {email: 'dev10@fis.edu.pe'}
+]
+
+devs.each { |user| User.create(email: user[:email], name: Faker::Name.first_name, last_name: Faker::Name.last_name, password: '123123123', user_type: dev) }
+
+leader = UserType.find_by_code('leader')
+
+leaders = [
+  {email: 'leader1@fis.edu.pe'},
+  {email: 'leader2@fis.edu.pe'},
+  {email: 'leader3@fis.edu.pe'},
+]
+
+leaders.each { |user| User.create(email: user[:email], name: Faker::Name.first_name, last_name: Faker::Name.last_name, password: '123123123', user_type: leader) }
+
+Company.all.each { |company| company.projects.create(title: Faker::Lorem.sentence, body: Faker::Lorem.paragraphs.join(' '))}
+
+devs = User.joins(:user_type).where('user_types.code = ?', 'dev')
+[0,1,2].each { |n| Participation.create(project: Project.first, user: devs[n])}
+[3,4,5,6].each { |n| Participation.create(project: Project.second, user: devs[n])}
+[7,8,9].each { |n| Participation.create(project: Project.third, user: devs[n])}
