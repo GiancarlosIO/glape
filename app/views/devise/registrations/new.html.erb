@@ -8,6 +8,12 @@
     <%= f.email_field :email, autofocus: true %>
   </div>
 
+
+  <div class="field">
+    <%= f.label :user_type_id, 'Tipo de usuario' %><br />
+    <%= f.select :user_type_id, options_from_collection_for_select(UserType.all, :id, :name) %>
+  </div>
+
   <div class="field">
     <%= f.label :password %>
     <% if @minimum_password_length %>
