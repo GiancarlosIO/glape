@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+ source 'https://rubygems.org'
 ruby '2.4.0'
 
 git_source(:github) do |repo_name|
@@ -21,6 +21,12 @@ gem 'uglifier', '>= 1.3.0'
 
 gem 'haml-rails'
 gem 'font-awesome-rails';
+
+# devise for user auth
+gem 'devise'
+
+# cancancan for role configuration
+gem 'cancancan', '~> 2.0'
 
 # webpack
 gem 'webpacker', '~> 2.0'
