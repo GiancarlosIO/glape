@@ -1,0 +1,9 @@
+#projects__index
+  .list
+    - @projects.each do |project|
+      = link_to project_path(id: project.id) do
+        .title
+          %b
+            = project.title
+        .body
+          = project.body
