@@ -15,8 +15,7 @@
       %nav.menu
         %ul
           %li.menu__link
-            %a{href: '#'}
-              Proyectos
+            = link_to('Proyectos', projects_path)
           - unless user_signed_in?
             %li.menu__link
               = link_to('Iniciar sesión', new_user_session_path)
